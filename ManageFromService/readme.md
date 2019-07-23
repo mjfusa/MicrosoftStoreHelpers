@@ -27,8 +27,9 @@ Use this document to help troubleshoot issues with using the Microsoft Store col
 
 ## From your UWP app, get the Microsoft Store ID key
 
-1. Get the Collection API token or Purchase API token in the step above and pass it to the ```serviceTicket``` parameter of [StoreContext.GetCustomerCollectionsIdAsync(String, String) Method (Windows.Services.Store)](https://docs.microsoft.com/en-us/uwp/api/windows.services.store.storecontext.getcustomercollectionsidasync)
-   If this API returns an empty string, review the above checkpoints. Note that the app registration may not be in effect yet given the 16 hour SLA.
+1. Get the Collection API token in the step above and pass it to the ```serviceTicket``` parameter of [StoreContext.GetCustomerCollectionsIdAsync(String, String) Method (Windows.Services.Store)](https://docs.microsoft.com/en-us/uwp/api/windows.services.store.storecontext.getcustomercollectionsidasync)      
+2. For the REST Purchase API use the Purchase API token received in the step above and pass it to the ```serviceTicket``` parameter of [StoreContext.GetCustomerPurchaseIdAsync(String, String) Method (Windows.Services.Store)](https://docs.microsoft.com/en-us/uwp/api/windows.services.store.storecontext.GetCustomerPurchaseIdAsync)  
+3. Note: If these APIs return an empty string, review the above checkpoints. Note that the app registration may not be in effect yet given the 16 hour SLA. 
 
 
 
