@@ -20,7 +20,7 @@ Use this document to help troubleshoot issues with using the Microsoft Store col
 
 ## Get the AAD Token, Collection API token, Purchase API tokens
 
-1. Use the following Postman requests to get the AAD token, Collection API token and Purchase API token: https://documenter.getpostman.com/view/3167620/S1TSafQk  
+1. Use the following Postman requests to get the AAD token, Collection API token and Purchase API token: https://documenter.getpostman.com/view/3167620/S1TSafQk.  To use the Postman requests you’ll need to update the variables to match your environment. Note that after a successful return if the AAS access token, it is automatically saved for use in the Authorization header of the Collection or Purchase API requests. 
 4. Validate the returned tokens with: https://jwt.io/  
 5. Get a fresh AAD bearer token to get a fresh Collection API token using Postman. See the main docs here for additional details: [Manage product entitlements from a service - Windows UWP applications](https://docs.microsoft.com/en-us/windows/uwp/monetize/view-and-grant-products-from-a-service).
 
