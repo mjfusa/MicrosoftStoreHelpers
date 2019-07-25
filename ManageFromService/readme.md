@@ -6,8 +6,11 @@ Use this document to help troubleshoot issues with using the Microsoft Store col
 
 ## Quick Checklist:  
 ## Preparing your UWP app: 
-1. If this is a Win32 app, make sure your are initializing the [StoreContext Class (Windows.Services.Store)](https://docs.microsoft.com/en-us/uwp/api/windows.services.store.storecontext) following the documentation here: [Using the StoreContext class with the Desktop Bridge](https://docs.microsoft.com/en-us/windows/uwp/monetize/in-app-purchases-and-trials#using-the-storecontext-class-with-the-desktop-bridge).  
-2. Associate your UWP app with the Store. In Visual Studio, right click your project. Select Store | Associate the App with the Store. Select your app from the list or reserve a new app name. You will access this app in the 'Preparing Partner Center' section below.
+1. To use the REST or UWP IAP APIs, your app needs to be published. It can be published hidden or made available to a set of specified users during development. See this link for more information on testing IAP: https://docs.microsoft.com/en-us/windows/uwp/monetize/in-app-purchases-and-trials#testing
+2. After the app is published, install it. This will install a license for the app locally. After it is installed, you can uninstall it as you will likely need to overwrite it for development.
+3. If this is a Win32 app, make sure your are initializing the [StoreContext Class (Windows.Services.Store)](https://docs.microsoft.com/en-us/uwp/api/windows.services.store.storecontext) following the documentation here: [Using the StoreContext class with the Desktop Bridge](https://docs.microsoft.com/en-us/windows/uwp/monetize/in-app-purchases-and-trials#using-the-storecontext-class-with-the-desktop-bridge).  
+4. Associate your UWP app with the Store. In Visual Studio, right click your project. Select Store | Associate the App with the Store. Select your app from the list or reserve a new app name. You will access this app in the 'Preparing Partner Center' section below.
+
 
 ## Registering an Azure Active Directory Application:  
 1.  Complete App Registration with **Azure Active Directory** using your Azure account at http://portal.azure.com.  
@@ -30,7 +33,7 @@ Use this document to help troubleshoot issues with using the Microsoft Store col
 1. Get the Collection API token in the step above and pass it to the ```serviceTicket``` parameter of [StoreContext.GetCustomerCollectionsIdAsync(String, String) Method (Windows.Services.Store)](https://docs.microsoft.com/en-us/uwp/api/windows.services.store.storecontext.getcustomercollectionsidasync)      
 2. For the REST Purchase API use the Purchase API token received in the step above and pass it to the ```serviceTicket``` parameter of [StoreContext.GetCustomerPurchaseIdAsync(String, String) Method (Windows.Services.Store)](https://docs.microsoft.com/en-us/uwp/api/windows.services.store.storecontext.GetCustomerPurchaseIdAsync)  
 
-    Note: If these APIs return an empty string, review the above checkpoints. Note that the app registration may not be in effect yet given the 16 hour SLA. 
+    Note: If these APIs return an empty string, review the above checkpoints. Note that the app registration may not be in effect yet given the 16 hour SLA. Don't forget to publish and install the app - see 'Preparing your UWP above.'
 
 
 
